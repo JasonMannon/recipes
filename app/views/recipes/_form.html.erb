@@ -2,7 +2,7 @@
   <input id="recipe_name" name="name" type="text"><br>
   <label for="recipe_description">Description</label><br>
   <textarea id="recipe_description" name="description">Enter Recipe here...</textarea><br>
-  <select name="tag_id">
+  <select class="btn btn-success" name="tag_id">
   <%= Tag.all.each do |tag| %>
     <option value="<%= tag.id %>"><%= tag.name %></option>
   <% end %>

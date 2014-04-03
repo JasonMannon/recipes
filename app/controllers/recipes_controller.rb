@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
                                    :description => params[:description])
 
     if @recipes.save
-      redirect_to("/recipes/#{@recipe_id}")
+      render("/recipes/index.html.erb")
     else
       render('recipes/new.html.erb')
     end
