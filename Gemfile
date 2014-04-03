@@ -12,12 +12,16 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
+  gem 'textacular'
 end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'textacular'
+  gem 'pry'
 end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'textacular'
 end
