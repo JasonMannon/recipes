@@ -1,5 +1,12 @@
 <h1><%= @recipe.name %></h1>
 
-<p>Description: <%=@recipe.description %></p>
+<p>Description:<br>
+<%= @recipe.description %></p>
 
+<p><a href="/recipes/<%= @recipe.id %>/edit">Edit recipe</a></p>
+<p><a href="/recipes/<%= @recipe.id %>"
+  data-confirm="Foshizzle?"
+  data-method="delete"
+  rel="nofollow">Delete</a></p>
 <p><a href="/recipes">Back to Recipe list</a></p>
+

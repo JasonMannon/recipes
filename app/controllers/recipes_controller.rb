@@ -10,6 +10,38 @@ class RecipesController < ApplicationController
   end
 
   def new
+    @recipe = Recipe.new
     render('recipes/new.html.erb')
+  end
+
+  def create
+    @recipe = Recipe.new(:name => params[:name],
+                         :description => params[:description])
+    if @recipe.save
+      redirect_to("/recipes/#{@recipe.id}")
+    else
+      render('recipes/new.html.erb')
+    end
+  end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+    render('recipes/edit.html.erb')
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update(:name => params[:name],
+                      :description => params[:description])
+      redirect_to("/recipes/#{@recipe.id}")
+    else
+      render('recipes/edit.html.erb')
+    end
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    render('recipes/destroy.html.erb')
   end
 end
