@@ -15,10 +15,14 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(:name => params[:name],
-                         :description => params[:description])
-    if @recipe.save
-      redirect_to("/recipes/#{@recipe.id}")
+    @tag = Tag.find(params[:tag_id])
+    #@recipe = Recipe.new(:name => params[:name],
+                   #      :description => params[:description])
+    @recipes = @tag.recipes.create(:name => params[:name],
+                                   :description => params[:description])
+
+    if @recipes.save
+      redirect_to("/recipes/#{@recipe_id}")
     else
       render('recipes/new.html.erb')
     end

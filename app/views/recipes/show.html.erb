@@ -1,11 +1,14 @@
 <h1><%= @recipe.name %></h1>
-
-<p>Description:<br>
+<b>Tag:</b>
+<% @recipe.tags.each do |tag| %>
+    <%= tag.name %>
+<% end %>
+<p><b>Description:</b><br>
 <%= @recipe.description %></p>
 
 <p><a href="/recipes/<%= @recipe.id %>/edit">Edit recipe</a></p>
 <p><a href="/recipes/<%= @recipe.id %>"
-  data-confirm="Foshizzle?"
+  data-confirm="Are you sure?"
   data-method="delete"
   rel="nofollow">Delete</a></p>
 <p><a href="/recipes">Back to Recipe list</a></p>
