@@ -6,6 +6,20 @@
 <p><b>Description:</b><br>
 <%= @recipe.description %></p>
 
+<p>Rate this recipe:
+<form action="/recipes/<%= @recipe.id %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <input id="recipe_name" name="name" type="hidden" value="<%= @recipe.name %>">
+  <input id="recipe_description" name="description" type="hidden" value="<%= @recipe.description %>">
+  <select name="rating">
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
+    <option value=4>4</option>
+    <option value=5>5</option>
+  </select> <button>Submit</button>
+</form><p>
+
 <p><a href="/recipes/<%= @recipe.id %>/edit">Edit recipe</a></p>
 <p><a href="/recipes/<%= @recipe.id %>"
   data-confirm="Are you sure?"
