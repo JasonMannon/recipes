@@ -1,4 +1,4 @@
-== Recipes
+**** Recipes
 **Let's make a site for sharing recipes.
 
 *As a contributor, I want to post new recipes, so that I can share them with others.
